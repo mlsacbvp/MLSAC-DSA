@@ -1,0 +1,50 @@
+void search_delete()
+{
+    int i,j;
+
+    // Today's Date
+    time_t now = time(0);
+    string date_today = ctime(&now);
+    string month_today=date_today.substr(4,3);
+    string day_today=date_today.substr(8,2);
+
+    int month_today1=get_month(month_today);
+
+    stringstream day_today2(day_today);
+    int day_today1;
+    day_today2>>day_today1;
+
+    int nmn=0;
+    for(i=0;i<n;i++)
+    {
+        string date_file=filenm[i].file_time;
+        string month_file=date_file.substr(4,3);
+        string day_file=date_file.substr(8,2);
+        int month_file1=get_month(month_file);
+        stringstream day_file2(day_file);
+        int day_file1;
+        day_file2>>day_file1;
+        if(month_file1>month_today1)
+         {
+             del_file_30(i);
+             nmn++;
+         }
+        else
+        {
+            //Taking no. of days in month as 30
+            if(month_file1<month_today1 && day_file1<day_today1)
+            {
+                del_file_30(i);
+                nmn++;
+            }
+        }
+        if(nmn==0)
+            cout<<"\n"<<"All files are new.."<<"\n";
+        else
+            cout<<"\n"<<nmn<<" files deleted"<<"\n";
+
+
+    }
+    disp();
+    cout<<"\n";
+}
