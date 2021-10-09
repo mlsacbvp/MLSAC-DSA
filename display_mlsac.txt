@@ -1,0 +1,31 @@
+void disp()
+{
+    int i;
+
+    cout<<"\n";
+    cout<<"********************************* Displaying Application File in the System(FAT 32) *************************************************"<<"\n";
+    cout<<"\n"<<"   NAME"<<"     "<<"    S_ADDR"<<"     "<<" SIZE"<<"     "<<" TYPE"<<"     "<<" TIMESTAMP"<<"\n"<<"\n";
+
+   // cout<<"\n"<<"\n"<<"DISPLAYING APPLICATION FILES:"<<"\n";
+    for(i=0;i<n;i++)
+    {
+        cout<<"| "<<filenm[i].name<<" |"<<"    "<<"| "<<filenm[i].s_addr<<" |"<<"     "<<"| "<<filenm[i].size1<<" |"<<"     "<<"| "<<filenm[i].type<<" |"<<"    "<<filenm[i].file_time<<"\n";
+
+    }
+    cout<<"\n";
+
+}
+
+void disp_system_files()
+{
+    int i;
+    cout<<"\n";
+    cout<<"********************************* Displaying System Files(FAT 32) *************************************************"<<"\n";
+    cout<<"\n"<<"   NAME"<<"     "<<"    S_ADDR"<<"     "<<" SIZE"<<"     "<<" TYPE"<<"\n"<<"\n";
+    for(i=0;i<n1;i++)
+    {
+        cout<<"| "<<filenm_priority[i].name<<" |"<<"     "<<"| "<<filenm_priority[i].s_addr<<" |"<<"     "<<"| "<<filenm_priority[i].size1<<" |"<<"     "<<"| "<<filenm_priority[i].type<<" |"<<"\n";
+
+    }
+    cout<<"\n";
+}
