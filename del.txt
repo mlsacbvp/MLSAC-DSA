@@ -1,0 +1,64 @@
+void del(string name)   
+        {
+        string type;
+        int P=0,i;
+        int K[10];
+        for(i=0;i<n;i++)
+        {
+        if(filenm[i].name==name)
+        {
+        K[P]=i;
+        P++;
+        }
+        }
+        if(P==0)
+        {
+        cout<<"Sorry, No such File Exists!!"<<"\n"<<"\n";
+        disp();
+        }
+        if(P==1)
+        {
+        int index=K[0];
+        for(i=index;i<n-1;i++)
+        {
+        filenm[i]=filenm[i+1];
+        }
+        n=n-1;
+        disp();
+        cout<<"\n"<<"File deleted.."<<"\n"<"\n";
+
+        }
+        if(P>1)
+        {
+        cout<<"There are "<<P<< Files exist with the same Name,Please give the file type:";
+        cin>>type;
+        int lm=0;
+        for(i=0;i<P;i++)
+        {
+        int index=K[i];
+        cout<<filenm[index].type;
+        if(filenm[index].type==type)
+        {
+        lm++;
+        for(i=index;i<n-1;i++)
+        {
+        filenm[i]=filenm[i+1];
+        }
+        n=n-1;
+        break;
+        }
+
+        }
+        if(lm!=0)
+        {
+        disp();
+        cout<<"\n"<<"File deleted.."<<"\n"<"\n";
+        }
+        if(lm==0)
+        {
+        cout<<"\n"<<"Sorry no such file Exists!"<<"\n"<<"\n";
+        disp();
+        }
+
+
+        }
